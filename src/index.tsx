@@ -14,4 +14,4 @@ root.render(
   </Theme>
 )
 
-serviceWorkerRegistration.unregister()
+serviceWorkerRegistration.register()

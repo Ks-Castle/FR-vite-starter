@@ -47,6 +47,8 @@ export function register(config?: Config) {
         import.meta.env.VITE_REACT_APP_SERVER_URL
       }/service-worker.ts`
       console.log(swUrl)
+      console.log(isLocalhost)
+      console.log(registerValidSW(swUrl, config))
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config)
