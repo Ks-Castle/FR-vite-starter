@@ -29,7 +29,8 @@ export function register(config?: Config) {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(
-      process.env.REACT_APP_SERVER_URL || 'http://localhost:5173/'
+      process.env.REACT_APP_SERVER_URL || 'http://localhost:5173/',
+      window.location.href
     )
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
