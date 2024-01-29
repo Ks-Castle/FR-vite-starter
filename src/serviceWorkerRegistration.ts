@@ -26,11 +26,6 @@ type Config = {
 }
 
 export function register(config?: Config) {
-  const ss = new URL(
-    import.meta.env.VITE_REACT_APP_SERVER_URL || 'http://localhost:5173/',
-    window.location.href
-  )
-  console.log(ss)
   if (
     import.meta.env.VITE_REACT_APP_ENV === 'production' &&
     'serviceWorker' in navigator
@@ -50,8 +45,8 @@ export function register(config?: Config) {
     window.addEventListener('load', () => {
       const swUrl = `${
         import.meta.env.VITE_REACT_APP_SERVER_URL
-      }/service-worker.js`
-
+      }/service-worker.ts`
+      console.log(swUrl)
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config)
