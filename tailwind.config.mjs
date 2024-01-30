@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import animatePlugin from 'tailwindcss-animate'
 import radixPlugin from 'tailwindcss-radix'
-import { extendedTheme } from './src/utils/extended-theme'
+import { extendedTheme } from './src/shared/extended-theme'
 import defaultTheme from 'tailwindcss/defaultTheme.js'
 
 export default {
