@@ -42,6 +42,12 @@ View and interact with your tests via UI.
 pnpm run test:ui
 ```
 
+UI Test
+
+```bash
+pnpm storybook
+```
+
 ## License
 
 This project is licensed under the MIT License.
