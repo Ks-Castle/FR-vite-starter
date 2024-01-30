@@ -20,7 +20,6 @@ export default defineConfig({
     include: ['**/*.test.(ts|tsx)']
   },
   build: {
-    sourcemap: true,
     rollupOptions: {
       input: {
         main: './index.html',
