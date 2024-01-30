@@ -1,6 +1,6 @@
-const CACHE_NAME = 'gih-cache-v2'
+const CACHE_NAME = 'app-cache-v2'
 
-const urlsToCache = ['/', '/assets/logo.svg']
+const urlsToCache = ['/', 'src/assets/logo.svg']
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
