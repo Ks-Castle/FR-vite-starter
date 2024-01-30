@@ -1,14 +1,45 @@
-self.addEventListener('install', (e) => {
-  import.meta.env.VITE_REACT_APP_ENV !== 'production' &&
-    console.log('[Service Worker] installed')
+const CACHE_NAME = 'gih-cache-v2'
+
+const urlsToCache = ['/', '/assets/logo.svg']
+
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches
+      .open(CACHE_NAME)
+      .then(function (cache) {
+        console.log('Opened cache', cache)
+        return cache.addAll(urlsToCache)
+      })
+      .catch(function () {
+        console.log('install error')
+      })
+  )
 })
 
-self.addEventListener('activate', (e) => {
-  import.meta.env.VITE_REACT_APP_ENV !== 'production' &&
-    console.log('[Service Worker] actived', e)
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      for (var i = 0, len = cacheNames.length; i < len; i++) {
+        if (cacheNames[i] !== CACHE_NAME) {
+          caches.delete(cacheNames[i])
+        }
+      }
+    })
+  )
 })
 
-self.addEventListener('fetch', (e) => {
-  import.meta.env.VITE_REACT_APP_ENV !== 'production' &&
-    console.log('[Service Worker] fetched resource ' + e.request.url)
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches
+      .match(event.request)
+      .then(function (response) {
+        if (response) {
+          return response
+        }
+        return fetch(event.request)
+      })
+      .catch(function () {
+        console.log('fetch error')
+      })
+  )
 })
