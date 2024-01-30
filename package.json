@@ -24,8 +24,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vite-plugin-pwa": "^0.17.5"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@radix-ui/themes": "^2.0.3",
@@ -50,9 +49,12 @@
     "prettier": "3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-radix": "^2.8.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vite-tsconfig-paths": "^4.3.1",
+    "vite-plugin-pwa": "^0.17.5",
     "vitest": "^1.2.2",
     "workbox-background-sync": "^7.0.0",
     "workbox-broadcast-update": "^7.0.0",
