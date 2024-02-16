@@ -1,6 +1,6 @@
 const CACHE_NAME = 'app-cache-v2'
 
-const urlsToCache = ['/', 'src/assets/logo.svg']
+const urlsToCache = ['/', 'src/assets/logo.svg', 'src/assets/Chrome_Hearts.svg']
 
 self.addEventListener('install', function (event) {
   event.waitUntil(

@@ -5,6 +5,7 @@
 
 import './HeaderImage.css'
 import Logo from '../../../assets/Chrome_Hearts.svg?react'
+//import Logo from '../../../assets/logo.svg?react'
 
 export const HeaderImage = () => {
   return (
